@@ -14,7 +14,6 @@ The programming language is Swift, an apple language for Apple's ecosystem. No e
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Xcode, SwiftUI, and UIKit basics](https://developer.apple.com/tutorials/app-dev-training)
 
 # Future Work
