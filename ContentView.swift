@@ -42,14 +42,16 @@ struct ContentView: View {
         }
     }
 
-    // Function to Save Quotes in UserDefaults
+    /// Saves the current list of quotes to UserDefaults as JSON data.
+    /// This ensures quotes persist even after the app is closed.
     func saveQuotes() {
         if let encodedData = try? JSONEncoder().encode(quotes) {
             UserDefaults.standard.set(encodedData, forKey: "savedQuotes")
         }
     }
 
-    // Function to Load Quotes from UserDefaults
+    /// Loads the saved list of quotes from UserDefaults.
+    /// If no saved data exists, the quotes list remains empty.
     func loadQuotes() {
         if let savedData = UserDefaults.standard.data(forKey: "savedQuotes"),
            let decodedQuotes = try? JSONDecoder().decode([Quote].self, from: savedData) {

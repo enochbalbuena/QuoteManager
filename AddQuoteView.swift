@@ -50,7 +50,9 @@ struct AddQuoteView: View {
         .navigationTitle("Add Quote")
     }
 
-    // Save Quotes to UserDefaults
+    /// Encodes the current list of quotes into JSON format and stores it in UserDefaults.
+    /// This ensures that the quotes persist even after the app is closed.
+    /// - Note: If encoding fails, the function does nothing.
     func saveQuotes() {
         if let encodedData = try? JSONEncoder().encode(quotes) {
             UserDefaults.standard.set(encodedData, forKey: "savedQuotes")
